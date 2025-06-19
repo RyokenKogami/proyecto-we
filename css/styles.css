@@ -1,0 +1,199 @@
+/* 1.Selector Padre o Principal */
+:root{
+    --color-primario: #1139ec;
+    --color-secundario: #a50808;
+    --color-parrafo: #53575A;
+    --color-titulos: #282d31;
+    --color-fondo: #fcfcfc;
+    --color-sombras: hsl(140, 68%, 35%);
+}
+/* Selector Universal: sirve para formatear el navegador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*para que no haya desbordamiento*/
+
+}
+
+/* Selector Hijo: Hace referenca al Body*/
+body{
+    background-color: var(--color-fondo); /*Fondo de pantalla*/
+
+}
+/* Boton de whatsApp */
+.boton-whatsapp{
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    background-color: #4dc247;
+    padding: .6em;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 2.3em;
+
+}
+
+.boton-whatsapp:hover{
+    background-color: #128c7e;
+    transition: background-color .5s ease-in-out;
+
+}
+
+/* INICIO DE MENU */
+header{
+    background-color: rgb(27, 150, 54);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 3px var(--color-sombras);
+}
+.menu{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.img-logo{
+    height: 3.8em;
+    padding: .2em;
+}
+.icono-menu{
+    display: none;
+}
+.enlaces{
+    text-align: right;
+}
+/* selector descendientes */
+.enlaces a{
+    color: var(--color-titulos);
+    padding: .5em;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+
+/* el media screen se utiliza para hacer RESPONSIVE WEB DESIGN (Adaptable) */
+@media screen and (max-width: 1023px) {
+    .menu{
+        flex-direction: column;
+    }
+
+    .icono-menu{
+        display: block;
+        color: var(--color-primario);
+        font-size: 2em;
+        margin-top: .4em;
+    }
+
+    .logo{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: .5em;
+    }
+
+    .enlaces{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* FIN DE MENU */
+
+
+/* Selector de clase: (CLASS): ELPUNTO(.) */
+.titulo2{
+    color: var(--color-titulos);
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+}
+    
+
+.titulo1{
+    color: var(--color-primario);
+    font-size: 1.7em; /*controla el tamaño de letra 1em = 16px */
+    font-weight: bold; /*controla la fuente en negrita*/
+    margin-top: -.3em; 
+}
+
+.parrafo{
+    color: var(--color-parrafo);
+    text-align: justify;
+    font-size: 1em;
+    line-height: 1.5em; /*interlineado*/
+    font-family: "Roboto", sans-serif; 
+    
+}
+
+/*padding es margen interno, y externo es margin*/
+.margen{
+    margin-bottom: 2em;
+}
+
+.enlace{
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 1em;
+    border-radius: .6em;
+    font-weight: bold;
+    text-decoration: none; /*quita el subrayado*/
+    margin-top: 10em;
+
+}
+/* PSEUDO CLASE: Sirve para cambiar el color el elemento cuando el usuario selecciona  */
+.enlace:hover{
+    color: yellow;
+    background-color: var(--color-secundario); /*cuando pones el cursor el contenedor cambia de color*/
+    transition: background-color .5s ease-in-out;   
+}
+
+/* Inicio de cards -clase 04 */
+.cards-grid{
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr))
+
+}
+
+.card{
+    background-color: #fff;
+    border-radius: .5em;
+    border: 1px solid var(--color-parrafo);
+    box-shadow: 0px 0px 3px var(--color-sombras);
+
+}
+
+.card-content{
+    padding:1em;
+}
+
+.card-title{
+    font-family: 'poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--color-titulos);
+    text-decoration: none;
+}
+
+/* me quede 1.41*/
+/* Fin de cards -clase 04 */

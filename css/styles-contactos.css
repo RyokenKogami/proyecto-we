@@ -1,0 +1,135 @@
+/* 1.Selector Padre o Principal */
+:root{
+    --color-primario: #1139ec;
+    --color-secundario: #a50808;
+    --color-parrafo: #53575A;
+    --color-titulos: #282d31;
+    --color-fondo: #fcfcfc;
+}
+/* Selector Universal: sirve para formatear el navegador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*para que no haya desbordamiento*/
+
+}
+
+/* Selector Hijo: Hace referenca al Body*/
+body{
+    background-color: var(--color-fondo); /*Fondo de pantalla*/
+
+}
+
+/*Selector de etiqueta*/
+form{
+    background-color: yellowgreen;
+    padding: 1em;
+    box-shadow: 2px 2px 8px #000;
+    max-width: 800px;
+}
+
+label{
+    color: var(--color-primario);
+    font-weight: bold;
+
+}
+
+input{
+    width: 100%;
+    padding: .4em;
+    border: 1px solid var(--color-primario);
+    margin-bottom: 1em;
+}
+
+textarea{
+    width: 100%;
+    min-height: 150px;
+    max-height: 200px;
+        border: 1px solid var(--color-primario);
+}
+
+select{
+    width: 100%;
+    padding: .4em;
+    border: 1px solid var(--color-primario);
+    margin-bottom: 1em;
+}
+
+/* INICIO DE MENU */
+header{
+    background-color: rgb(27, 150, 54);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 3px var(--color-sombras);
+}
+.menu{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.img-logo{
+    height: 3.8em;
+    padding: .2em;
+}
+.icono-menu{
+    display: none;
+}
+.enlaces{
+    text-align: right;
+}
+/* selector descendientes */
+.enlaces a{
+    color: var(--color-titulos);
+    padding: .5em;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+
+/* el media screen se utiliza para hacer RESPONSIVE WEB DESIGN (Adaptable) */
+@media screen and (max-width: 1023px) {
+    .menu{
+        flex-direction: column;
+    }
+
+    .icono-menu{
+        display: block;
+        color: var(--color-primario);
+        font-size: 2em;
+        margin-top: .4em;
+    }
+
+    .logo{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: .5em;
+    }
+
+    .enlaces{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* FIN DE MENU */

@@ -1,0 +1,168 @@
+/* 1.Selector Padre o Principal */
+:root{
+    --color-primario: #1139ec;
+    --color-secundario: #a50808;
+    --color-parrafo: #53575A;
+    --color-titulos: #282d31;
+    --color-fondo: #fcfcfc;
+    --color-sombras: hsl(140, 68%, 35%);
+}
+/* Selector Universal: sirve para formatear el navegador */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*para que no haya desbordamiento*/
+
+}
+
+/* Selector Hijo: Hace referenca al Body*/
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form-container{
+    background: var(--color-fondo);
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 320px;
+}
+
+h2{
+    color: var(--color-primario);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+p{
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+select, input[type="text"], input[type="email"], input[type="tel"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid var(--color-parrafo);
+    border-radius: 4px;
+}
+
+.comunicacion{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.condiciones {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.condiciones a{
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #18b49f;
+}
+
+/* INICIO DE MENU */
+header{
+    background-color: rgb(27, 150, 54);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 3px var(--color-sombras);
+}
+.menu{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+}
+
+.img-logo{
+    height: 3.8em;
+    padding: .2em;
+}
+.icono-menu{
+    display: none;
+}
+.enlaces{
+    text-align: right;
+}
+/* selector descendientes */
+.enlaces a{
+    color: var(--color-titulos);
+    padding: .5em;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+
+/* el media screen se utiliza para hacer RESPONSIVE WEB DESIGN (Adaptable) */
+@media screen and (max-width: 1023px) {
+    .menu{
+        flex-direction: column;
+    }
+
+    .icono-menu{
+        display: block;
+        color: var(--color-primario);
+        font-size: 2em;
+        margin-top: .4em;
+    }
+
+    .logo{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        padding: .5em;
+    }
+
+    .enlaces{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* FIN DE MENU */
